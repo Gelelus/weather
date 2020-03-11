@@ -3,32 +3,40 @@
     padding: 0;
     font-family: monospace;
    }
+   body{
+    background:#1d3d4e;
+   }
 #main{
-  background:#1d3d4e;
+  
   height:100vh;
   width:100%;  
   display:flex;
   justify-content:center;
-  align-items:center;
+  
   color:white;
   font-size:3em;
   text-align:center;
   
 }
+.center{
+  margin-top:20vh;
+}
 #showBtn{
-  width:40em;
+  width:20em;
   height:4em;
   border-radius:20px;
   margin:3em;
   font-size:0.5em;
   background:gray;
-  
+  box-shadow: 0 0 10px white;
 }
 #reg, #city, button{
   cursor:pointer;
 }
 select{
   background: black;
+  border-radius:5px;
+  box-shadow: 0 0 10px white;
   width: 268px;
   padding: 5px;
   font-size: 16px;
