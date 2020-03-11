@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
 </head>
+
 <body>
-    <div id = 'main'>
-        <div>
-          <p id = 'reg'>Регион:<span></span></p>
-          <p id = 'city'>Город:<span></span></p>
-          <button>Показать</button>
-          
-        </div>
-      </div>
-      <script src="./js/main.js"></script>
+  <div id='main'>
+    <div>
+      <div class='flex'>
+        <p>Регион:<br /> <select id='reg'></select></p>
+        <p>Город:<br /> <select id='city'></select></p>
+     </div>
+     <button id='showBtn'>Запросить температуру</button>
+      <p>Текущая температура:<span id ='tempNow'></span></p>
+      <p>Температура на 8 следующих дней:</p>
+      <p id = 'tempMore'></p>
+    </div>
+  </div>
+  <script src="./js/main.js"></script>
 </body>
+
 </html>

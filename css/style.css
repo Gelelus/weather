@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: monospace;
    }
 #main{
   background:#1d3d4e;
@@ -11,13 +12,33 @@
   align-items:center;
   color:white;
   font-size:3em;
+  text-align:center;
+  
 }
-button{
-  width:10em;
+#showBtn{
+  width:40em;
   height:4em;
   border-radius:20px;
-  margin-left:7em;
+  margin:3em;
+  font-size:0.5em;
+  background:gray;
+  
 }
 #reg, #city, button{
   cursor:pointer;
+}
+select{
+  background: black;
+  width: 268px;
+  padding: 5px;
+  font-size: 16px;
+  color: white;
+  height: 34px;
+}
+.flex{
+  display:flex;
+  justify-content: center;
+}
+.flex p {
+  margin:1em;
 }
