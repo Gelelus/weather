@@ -50,24 +50,35 @@ async function getUsers() {
         const lon = option.dataset.lon;
         const lat = option.dataset.lat;
         
-        const URL = `https://api.darksky.net/forecast/a7a43ea3b9f462f090b35a65b9a5cda3/${lat},${lon}`
-        const PROXYURL = "https://cors-anywhere.herokuapp.com/";
+        //for api.darksky
+        //const URL = `https://api.darksky.net/forecast/a7a43ea3b9f462f090b35a65b9a5cda3/${lat},${lon}`
+        //const PROXYURL = "https://cors-anywhere.herokuapp.com/";
+        
+        //for api.openweather
+        const apiKey = 'aa27abf40894c61df831e8dde64c5503';
+        const URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
-        let response2 = await fetch(PROXYURL + URL);
-        //console.log(response2)
+        console.log(URL);
+
+        let response2 = await fetch(URL);
+        //let response2 = await fetch(URL+PROXYURL);
+        console.log(response2)
+
         let dataTemp = await response2.json();
         console.log(dataTemp)
-        tempNow.innerHTML = Math.floor((dataTemp.currently.temperature - 32)*5/9) + 'C&deg';
+        //for api.openweather
+           
+
+        /////for api.darksky
+        /*tempNow.innerHTML = Math.floor((dataTemp.currently.temperature - 32)*5/9) + 'C&deg';
      
         str = '';
         for(let data of dataTemp.daily.data){
             str += Math.floor((((data.temperatureMax + data.temperatureMin)/2)-32)*5/9) + 'C&deg' + ' ';
        }
-       tempMore.innerHTML = str;
+       tempMore.innerHTML = str;*/
+       /////////
     } 
-    //let response2 = await fetch(PROXYURL + URL);
-    //let dataTemp = await response2.json();
-    //console.log(dataTemp)
 
 }
 getUsers();
