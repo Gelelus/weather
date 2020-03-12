@@ -70,11 +70,21 @@
   border-radius:20px;
   margin:3em;
   font-size:0.5em;
-  background:gray;
+  background:#1d3d4e;
   box-shadow: 0 0 10px white;
+  color:white;
+}
+#showBtn:hover{
+  transition: 1s background-color;
+  background:gray;
 }
 #regTest, #cityTest, #dayTest, button{
   cursor:pointer;
+}
+
+.flex p:hover{
+  transition: color 1s;
+  color: red;
 }
 select{
   background: black;

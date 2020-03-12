@@ -147,7 +147,7 @@ async function getUsers() {
 
         let response2 = await fetch(URL);
         //let response2 = await fetch(URL+PROXYURL);
-        console.log(response2)
+        //console.log(response2)
 
         let dataTemp = await response2.json();
         console.log(dataTemp)
@@ -157,12 +157,20 @@ async function getUsers() {
         
         main.forEach(function(a){
           if(a['dt_txt'].slice(0,10) === dayTest.dataset.number){
-            console.log(a.main.temp)
-            dayWeather += '<div class ="weatherDay">' + a['dt_txt'].slice(-8,-3) + '<br/><br/>' + Math.floor(a.main.temp - 273.15) + 'C&deg'  + '</div>';
+            
+            dayWeather += '<div class ="weatherDay">' +
+
+            a['dt_txt'].slice(-8,-3) +
+
+            `<br/><img src = 'http://openweathermap.org/img/wn/${a.weather[0].icon}@2x.png'></img><br/>` +
+
+            Math.floor(a.main.temp - 273.15) + 'C&deg'  +
+
+            '</div>';
           
         }
         })
-        console.log(dayWeather);
+       
         display.innerHTML = dayWeather;
 
         /////for api.darksky
