@@ -31,9 +31,35 @@
   transition: left 1s;
 }
 #choosing div{
-  outline:1px solid black;
+  border-right:1px solid black;
+  border-bottom:1px solid black;
   color:black;
+  cursor:pointer;
+  display:flex;
+  justify-content: center;
+  align-items: center;
   
+}
+.region{
+  box-sizing: border-box;
+  width:50%;
+}
+.city{
+  box-sizing: border-box;
+  font-size:0.5em;
+  width: 10%;
+}
+.date{
+  box-sizing: border-box;
+ 
+  width:20%;
+}
+.weatherDay{
+  
+  margin:0.2em;
+  padding:0.5em;
+  border:1px solid white;
+  border-radius: 30px;
 }
 .center{
   margin-top:20vh;
@@ -47,7 +73,7 @@
   background:gray;
   box-shadow: 0 0 10px white;
 }
-#reg, #city, button{
+#regTest, #cityTest, #dayTest, button{
   cursor:pointer;
 }
 select{
@@ -63,7 +89,9 @@ select{
 .flex{
   display:flex;
   justify-content: center;
+  flex-wrap:wrap;
 }
 .flex p {
+  width:10em;
   margin:1em;
 }
