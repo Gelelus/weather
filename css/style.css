@@ -5,6 +5,7 @@
    }
    body{
     background:#1d3d4e;
+    position:relative;
    }
 #main{
   
@@ -16,6 +17,22 @@
   color:white;
   font-size:3em;
   text-align:center;
+  
+}
+#choosing{
+  position:absolute;
+  display:flex;
+  flex-wrap:wrap;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  opacity: 0.8; 
+  left: -100vw;
+  transition: left 1s;
+}
+#choosing div{
+  outline:1px solid black;
+  color:black;
   
 }
 .center{

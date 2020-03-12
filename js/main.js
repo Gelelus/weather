@@ -2,9 +2,14 @@ const regionDataUrl = 'https://raw.githubusercontent.com/Gelelus/internship/mast
 
 const region = document.getElementById('reg');
 const city = document.getElementById('city');
+
+const regionTest = document.getElementById('regTest');
+const cityTest = document.getElementById('cityTest');
+
 const btn = document.getElementById('showBtn');
 const tempNow = document.getElementById('tempNow');
 const tempMore = document.getElementById('tempMore');
+const choosing = document.getElementById('choosing');
 let dataCordinate = null;
 
 
@@ -15,18 +20,18 @@ async function getUsers() {
     let dataCordinates = await response1.json();
     console.log(dataCordinates[0]);
 
-    let string1 = '<option  selected="selected" disabled>Выберите регион</option>';
-    let string2 = '<option  selected="selected" disabled>Выберите город</option>';
+    let allRegions = '';
+    let allCities = '';
 
     dataCordinates[0].regions.forEach(function (a) {
-        string1 += `<option>${a.name}</option>`
+        allRegions += `<div style = 'width:49.999%'>${a.name}</div>`
         a.cities.forEach(function (an) {
-            string2 += `<option value = ${an.name} data-lat = ${an.lat} data-lon = ${an.lng}>${an.name}</option>`
+            allCities += `<div name = ${an.name} data-lat = ${an.lat} data-lon = ${an.lng}>${an.name}</div>`
         })
     })
 
-    region.innerHTML = string1;
-    city.innerHTML = string2;
+   
+
 
     region.onchange = function () {
         let inCity = '<option  selected="selected" disabled>Выберите город</option>';
@@ -43,6 +48,15 @@ async function getUsers() {
         city.innerHTML = inCity;
     }
     
+    regionTest.onclick = function (){
+        choosing.innerHTML = allRegions;
+        choosing.style.left = 0;
+    }
+    choosing.onclick = function (e){
+      
+       this.style.left = '';
+
+    }
 
     btn.onclick = async function (){
         if(city.value === "Выберите город"){return}
@@ -67,7 +81,7 @@ async function getUsers() {
         let dataTemp = await response2.json();
         console.log(dataTemp)
         //for api.openweather
-           
+    
 
         /////for api.darksky
         /*tempNow.innerHTML = Math.floor((dataTemp.currently.temperature - 32)*5/9) + 'C&deg';
