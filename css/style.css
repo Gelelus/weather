@@ -34,15 +34,13 @@
   
 }
 #choosing div{
-  border-right:1px solid black;
-  border-left:1px solid black;
-  border-bottom:1px solid black;
   color:black;
   cursor:pointer;
   display:flex;
   justify-content: center;
   align-items: center;
-  
+  margin: -1px 0 0 -1px;
+  border: 1px solid black;
 }
 .region{
   box-sizing: border-box;
@@ -93,16 +91,7 @@
   transition: color 1s;
   color: red;
 }
-select{
-  background: black;
-  border-radius:5px;
-  box-shadow: 0 0 10px white;
-  width: 268px;
-  padding: 5px;
-  font-size: 16px;
-  color: white;
-  height: 34px;
-}
+
 
 .flex{
   display:flex;
