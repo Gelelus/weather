@@ -124,7 +124,9 @@ async function getUsers() {
         }
         this.style.left = '';
         this.innerHTML = '';
-        go()
+        go().then(()=>{
+            
+        })
     }
 
 
@@ -173,6 +175,16 @@ async function getUsers() {
         })
        
         display.innerHTML = dayWeather;
+
+        let height = display.offsetHeight;
+        console.log(display.offsetHeight)
+        console.log(display.scrollHeight)
+        console.log(display)
+        
+        setTimeout(() => {
+            display.style.height = display.scrollHeight + 'px';
+        }, 500);
+        
         
         /////for api.darksky
         /*tempNow.innerHTML = Math.floor((dataTemp.currently.temperature - 32)*5/9) + 'C&deg';
