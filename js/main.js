@@ -173,7 +173,7 @@ async function getUsers() {
         })
        
         display.innerHTML = dayWeather;
-
+        
         /////for api.darksky
         /*tempNow.innerHTML = Math.floor((dataTemp.currently.temperature - 32)*5/9) + 'C&deg';
      
