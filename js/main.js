@@ -6,7 +6,7 @@ const display = document.getElementById('display');
 const regionTest = document.getElementById('regTest');
 const cityTest = document.getElementById('cityTest');
 
-const btn = document.getElementById('showBtn');
+//const btn = document.getElementById('showBtn');
 const tempNow = document.getElementById('tempNow');
 const tempMore = document.getElementById('tempMore');
 const choosing = document.getElementById('choosing');
@@ -123,12 +123,13 @@ async function getUsers() {
             dayTest.dataset.number = e.target.dataset.number;
         }
         this.style.left = '';
-
+        this.innerHTML = '';
+        go()
     }
 
 
 
-    btn.onclick = async function () {
+    async function go () {
         if (cityTest.textContent === "Выберите город" || dayTest.textContent === 'Выберите день') { return }
 
         
