@@ -40,7 +40,7 @@
   justify-content: center;
   align-items: center;
   margin: -1px 0 0 -1px;
-  border: 1px solid black;
+  border: 1px solid rgb(223, 141, 19);
 }
 .region{
   box-sizing: border-box;
